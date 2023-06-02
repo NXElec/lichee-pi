@@ -60,21 +60,20 @@
 		compatible = "gpio-leds";
 
 		blue_led {
-			label = "licheepi:blue:usr";
-			gpios = <&pio 6 1 GPIO_ACTIVE_LOW>; /* PG1 */
+			label = "winter:blue:usr";
+			gpios = <&pio 1 5 GPIO_ACTIVE_LOW>; /* PB5 */
+			linux,default-trigger = "heartbeat";
 		};
 
-		green_led {
-			label = "licheepi:green:usr";
-			gpios = <&pio 6 0 GPIO_ACTIVE_LOW>; /* PG0 */
-			default-state = "on";
-		};
-
-		red_led {
-			label = "licheepi:red:usr";
-			gpios = <&pio 6 2 GPIO_ACTIVE_LOW>; /* PG2 */
-		};
 	};
+};
+
+&cedarx {
+	status = "okay";
+};
+
+&ion {
+	status = "okay";
 };
 
 &ehci0 {
